@@ -34,8 +34,12 @@ while stop is False:
 		time.sleep(2)
 	(ev,evg,c,lsim,tw_good,tw_rep) = event_detection('fcom.txt',voc,'random_good.txt',0.5)
 	f2=open('result.txt','a')
-	f2.write(ev)
+	for x in ev:
+		f2.write('events')
+		f2.write(x[0][0])
 	f2.write('\n')
-	f2.write(evg)
+	for y in evg:
+		f2.write('filtered events')
+		f2.write(y[0][0])
 	f2.close()
 	
